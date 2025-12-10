@@ -34,12 +34,12 @@ body {
     font-weight: bold;
 }
 
-/* Layout de 2 columnas */
+/* Layout */
 .layout {
     display: flex;
 }
 
-/* Barra lateral */
+/* Sidebar */
 .sidebar {
     width: 240px;
     background: var(--gris-oscuro);
@@ -48,34 +48,46 @@ body {
     min-height: 100vh;
 }
 
-.sidebar h3 {
+/* --- Desplegables --- */
+.dropdown {
+    margin-bottom: 20px;
+}
+
+.dropdown summary {
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 8px 0;
     color: var(--naranja);
-    margin-top: 0;
 }
 
-.section-list img {
-    height: 18px;
-    margin-right: 5px;
-    vertical-align: middle;
+.dropdown summary:hover {
+    color: var(--blanco);
 }
 
-.sidebar ul {
+.dropdown ul {
     list-style: none;
-    padding: 0;
-    margin: 0 0 20px 0;
+    padding-left: 10px;
+    margin-top: 10px;
 }
 
-.sidebar li {
-    margin: 10px 0;
-    padding: 4px 0;
+.dropdown li {
+    padding: 6px 0;
     cursor: pointer;
 }
 
-.sidebar li:hover {
+.dropdown li:hover {
     color: var(--naranja);
 }
 
-/* Feed central */
+/* Iconos de secciones */
+.section-list img {
+    height: 18px;
+    margin-right: 6px;
+    vertical-align: middle;
+}
+
+/* Feed */
 .feed {
     flex: 1;
     padding: 20px;
