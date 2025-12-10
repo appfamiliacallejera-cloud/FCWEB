@@ -1,0 +1,100 @@
+/* Colores base */
+:root {
+    --naranja: #ff7a00;
+    --negro: #111;
+    --gris: #ececec;
+    --gris-oscuro: #222;
+    --blanco: #fff;
+}
+
+/* General */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: var(--gris);
+    color: var(--negro);
+}
+
+/* Barra superior */
+.topbar {
+    background: var(--negro);
+    color: var(--naranja);
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.topbar img {
+    height: 40px;
+    margin-right: 12px;
+}
+
+.topbar .title {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* Layout de 2 columnas */
+.layout {
+    display: flex;
+}
+
+/* Barra lateral */
+.sidebar {
+    width: 240px;
+    background: var(--gris-oscuro);
+    color: var(--blanco);
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.sidebar h3 {
+    color: var(--naranja);
+    margin-top: 0;
+}
+
+.section-list img {
+    height: 18px;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+.sidebar li {
+    margin: 10px 0;
+    padding: 4px 0;
+    cursor: pointer;
+}
+
+.sidebar li:hover {
+    color: var(--naranja);
+}
+
+/* Feed central */
+.feed {
+    flex: 1;
+    padding: 20px;
+}
+
+.feed h2 {
+    border-left: 6px solid var(--naranja);
+    padding-left: 10px;
+}
+
+/* Posts */
+.post {
+    background: var(--blanco);
+    padding: 15px;
+    margin-bottom: 15px;
+    border-left: 4px solid var(--naranja);
+    border-radius: 4px;
+}
+
+.post h3 {
+    margin: 0 0 8px 0;
+}
