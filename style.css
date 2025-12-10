@@ -110,3 +110,43 @@ body {
 .post h3 {
     margin: 0 0 8px 0;
 }
+
+/* --- Páginas internas (rangos, secciones, login, etc.) --- */
+.internal-window {
+    width: 400px;
+    background: var(--blanco);
+    padding: 30px;
+    margin: 80px auto;
+    border-radius: 12px;
+    border: 3px solid var(--naranja);
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+
+.internal-title {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: var(--negro);
+}
+
+.internal-description {
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--negro);
+    margin-bottom: 20px;
+}
+
+.back-button {
+    display: inline-block;
+    background: var(--naranja);
+    color: var(--negro);
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.back-button:hover {
+    background: var(--negro);
+    color: var(--naranja);
+}
