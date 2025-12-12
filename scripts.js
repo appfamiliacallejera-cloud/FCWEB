@@ -5,35 +5,38 @@ console.log("FCWEB cargada correctamente.");
    ELEMENTOS
 -------------------------------------------------- */
 const sidebar = document.getElementById("sidebar");
-const menuBtn = document.getElementById("menuBtn");
 const closeBtn = document.getElementById("closeBtn");
 
-/* --------------------------------------------------
-   ABRIR SIDEBAR
--------------------------------------------------- */
-menuBtn.addEventListener("click", () => {
-    sidebar.classList.add("open");
-});
+// Botones menú PC y móvil
+const menuBtnDesktop = document.getElementById("menuBtnDesktop");
+const menuBtnMobile  = document.getElementById("menuBtnMobile");
 
 /* --------------------------------------------------
-   CERRAR SIDEBAR (botón ✕)
+   ABRIR SIDEBAR DESDE CUALQUIER BOTÓN
+-------------------------------------------------- */
+function openSidebar() {
+    sidebar.classList.add("open");
+}
+
+menuBtnDesktop.addEventListener("click", openSidebar);
+menuBtnMobile.addEventListener("click", openSidebar);
+
+/* --------------------------------------------------
+   CERRAR SIDEBAR
 -------------------------------------------------- */
 closeBtn.addEventListener("click", () => {
     sidebar.classList.remove("open");
 });
 
 /* --------------------------------------------------
-   CERRAR AL HACER CLIC FUERA DEL MENÚ
+   CERRAR AL HACER CLIC FUERA
 -------------------------------------------------- */
 document.addEventListener("click", (e) => {
-    // Si el menú NO está abierto → ignorar
     if (!sidebar.classList.contains("open")) return;
 
-    // Si se hace clic dentro del sidebar → no cerrar
-    if (sidebar.contains(e.target) || menuBtn.contains(e.target)) return;
+    if (sidebar.contains(e.target)) return;
+    if (menuBtnDesktop.contains(e.target)) return;
+    if (menuBtnMobile.contains(e.target)) return;
 
-    // Si se clicó fuera → cerrar
     sidebar.classList.remove("open");
 });
-
-

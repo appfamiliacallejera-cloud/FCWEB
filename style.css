@@ -45,27 +45,6 @@ body {
     display: flex;
 }
 
-/* --------------------------------------------------
-   BOTÓN MENÚ MÓVIL
--------------------------------------------------- */
-.menu-btn {
-    position: fixed;
-    top: 12px;
-    right: 15px;
-    font-size: 32px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    z-index: 2000;
-    color: white;
-    display: none; /* Solo móvil */
-}
-
-@media (max-width: 900px) {
-    .menu-btn {
-        display: block;
-    }
-}
 
 /* --------------------------------------------------
    SIDEBAR DERECHA (DESPLEGABLE)
