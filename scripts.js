@@ -1,4 +1,4 @@
-// scripts.js
+// FCWEB/scripts.js
 console.log("FCWEB cargada correctamente.");
 
 // Elementos
