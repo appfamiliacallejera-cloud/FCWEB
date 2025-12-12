@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>FC • Familia Callejera</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <!-- BOTÓN TOGGLE (móvil/desktop) -->
+    <button class="sidebar-toggle" aria-label="Abrir menú">☰</button>
 
     <!-- Barra superior -->
     <header class="topbar">
@@ -19,7 +22,7 @@
     <div class="layout">
 
         <!-- BARRA LATERAL -->
-        <aside class="sidebar">
+        <aside class="sidebar" id="sidebar">
 
             <!-- USUARIO -->
             <details class="dropdown">
@@ -33,43 +36,42 @@
             <details class="dropdown">
                 <summary>🏴 Secciones</summary>
                 <ul class="section-list">
-
                     <li>
                         <a href="pages/secciones/gato.html">
-                            <img src="images/WhatsApp Image 2025-09-02 at 21.13.15.jpeg" alt="Gato"> Gato
+                            <img class="menu-icon" src="images/WhatsApp Image 2025-09-02 at 21.13.15.jpeg" alt="Gato">
+                            <span>Gato</span>
                         </a>
                     </li>
-
                     <li>
                         <a href="pages/secciones/aguila.html">
-                            <img src="images/WhatsApp Image 2025-09-02 at 21.13.15 (1).jpeg" alt="Águila"> Águila
+                            <img class="menu-icon" src="images/WhatsApp Image 2025-09-02 at 21.13.15 (1).jpeg" alt="Águila">
+                            <span>Aguila</span>
                         </a>
                     </li>
-
                     <li>
                         <a href="pages/secciones/capibara.html">
-                            <img src="images/WhatsApp Image 2025-09-02 at 21.13.15 (2).jpeg" alt="Capibara"> Capibara
+                            <img class="menu-icon" src="images/WhatsApp Image 2025-09-02 at 21.13.15 (2).jpeg" alt="Capibara">
+                            <span>Capibara</span>
                         </a>
                     </li>
-
                     <li>
                         <a href="pages/secciones/pollo.html">
-                            <img src="images/sec4.png" alt="Pollo"> Pollo
+                            <img class="menu-icon" src="images/sec4.png" alt="Pollo">
+                            <span>Pollo</span>
                         </a>
                     </li>
-
                     <li>
                         <a href="pages/secciones/pantera.html">
-                            <img src="images/sec5.png" alt="Pantera"> Pantera
+                            <img class="menu-icon" src="images/sec5.png" alt="Pantera">
+                            <span>Pantera</span>
                         </a>
                     </li>
-
                     <li>
                         <a href="pages/secciones/cachimba.html">
-                            <img src="images/sec6.png" alt="Cachimba"> Cachimba
+                            <img class="menu-icon" src="images/sec6.png" alt="Cachimba">
+                            <span>Cachimba</span>
                         </a>
                     </li>
-
                 </ul>
             </details>
 
@@ -77,55 +79,54 @@
             <details class="dropdown">
                 <summary>🎖 Rangos</summary>
                 <ul class="rank-list">
-
                     <li>
                         <a href="pages/rangos/omega.html">
-                            <img src="images/WhatsApp Image 2025-12-10 at 15.26.11.jpeg" alt="Omega"> Omega
+                            <img class="menu-icon" src="images/WhatsApp Image 2025-12-10 at 15.26.11.jpeg" alt="Omega">
+                            <span>Omega</span>
                         </a>
                     </li>
-
                     <li>
                         <a href="pages/rangos/alfa.html">
-                            <img src="images/WhatsApp Image 2025-12-10 at 15.28.25.jpeg" alt="Alfa"> Alfa
+                            <img class="menu-icon" src="images/WhatsApp Image 2025-12-10 at 15.28.25.jpeg" alt="Alfa">
+                            <span>Alfa</span>
                         </a>
                     </li>
-
                     <li>
                         <a href="pages/rangos/beta.html">
-                            <img src="images/WhatsApp Image 2025-12-10 at 15.28.37.jpeg" alt="Beta"> Beta
+                            <img class="menu-icon" src="images/WhatsApp Image 2025-12-10 at 15.28.37.jpeg" alt="Beta">
+                            <span>Beta</span>
                         </a>
                     </li>
-
                     <li>
                         <a href="pages/rangos/centinela.html">
-                            <img src="images/WhatsApp Image 2025-12-10 at 15.29.15.jpeg" alt="Centinela"> Centinela
+                            <img class="menu-icon" src="images/WhatsApp Image 2025-12-10 at 15.29.15.jpeg" alt="Centinela">
+                            <span>Centinela</span>
                         </a>
                     </li>
-
                     <li>
                         <a href="pages/rangos/oficial.html">
-                            <img src="images/WhatsApp Image 2025-12-10 at 15.27.06.jpeg" alt="Oficial"> Oficial
+                            <img class="menu-icon" src="images/WhatsApp Image 2025-12-10 at 15.27.06.jpeg" alt="Oficial">
+                            <span>Oficial</span>
                         </a>
                     </li>
-
                     <li>
                         <a href="pages/rangos/capitan.html">
-                            <img src="images/WhatsApp Image 2025-12-10 at 15.30.07.jpeg" alt="Capitán"> Capitán
+                            <img class="menu-icon" src="images/WhatsApp Image 2025-12-10 at 15.30.07.jpeg" alt="Capitán">
+                            <span>Capitan</span>
                         </a>
                     </li>
-
                     <li>
                         <a href="pages/rangos/practicante.html">
-                            <img src="images/WhatsApp Image 2025-12-10 at 15.31.00.jpeg" alt="Practicante"> Practicante
+                            <img class="menu-icon" src="images/WhatsApp Image 2025-12-10 at 15.31.00.jpeg" alt="Practicante">
+                            <span>Practicante</span>
                         </a>
                     </li>
-
                     <li>
                         <a href="pages/rangos/aprendiz.html">
-                            <img src="images/WhatsApp Image 2025-12-10 at 15.31.59.jpeg" alt="Aprendiz"> Aprendiz
+                            <img class="menu-icon" src="images/WhatsApp Image 2025-12-10 at 15.31.59.jpeg" alt="Aprendiz">
+                            <span>Aprendiz</span>
                         </a>
                     </li>
-
                 </ul>
             </details>
 
@@ -155,6 +156,23 @@
         </main>
 
     </div>
+
+    <!-- SCRIPT mínimo para toggle sidebar (añádelo al final) -->
+    <script>
+        (function(){
+            const toggle = document.querySelector('.sidebar-toggle');
+            const sidebar = document.getElementById('sidebar');
+
+            toggle.addEventListener('click', () => {
+                sidebar.classList.toggle('open');
+            });
+
+            // Cerrar al hacer click en un enlace (móvil)
+            document.querySelectorAll('.sidebar a').forEach(a=>{
+                a.addEventListener('click', ()=> sidebar.classList.remove('open'));
+            });
+        })();
+    </script>
 
 </body>
 </html>

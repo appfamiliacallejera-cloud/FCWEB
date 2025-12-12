@@ -8,11 +8,14 @@
 }
 
 /* General */
+* { box-sizing: border-box; }
 body {
     margin: 0;
-    font-family: 'Segoe UI', Roboto, Arial, sans-serif; /* Tipografía moderna */
+    font-family: 'Segoe UI', Roboto, Arial, sans-serif; /* tipografía más profesional */
     background: var(--gris);
     color: var(--negro);
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
 }
 
 /* Barra superior */
@@ -21,22 +24,26 @@ body {
     color: var(--naranja);
     display: flex;
     align-items: center;
+    gap: 12px;
     padding: 10px 20px;
 }
 
 .topbar img {
     height: 40px;
-    margin-right: 12px;
+    width: 40px;
+    object-fit: cover;
+    border-radius: 6px;
 }
 
 .topbar .title {
     font-size: 22px;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 /* Layout general */
 .layout {
     display: flex;
+    min-height: calc(100vh - 60px);
 }
 
 /* ---------------------- */
@@ -45,22 +52,25 @@ body {
 
 .sidebar {
     width: 240px;
-    background: var(--gris-oscuro);
+    background: linear-gradient(180deg, var(--gris-oscuro), #1b1b1b);
     color: var(--blanco);
     padding: 20px;
     min-height: 100vh;
     font-family: 'Segoe UI', Roboto, sans-serif;
-    transition: transform 0.3s ease;
+    transition: transform 0.28s ease, box-shadow 0.28s ease;
+    box-shadow: 0 0 0 rgba(0,0,0,0);
 }
 
-/* Sidebar colapsado en móviles */
-@media (max-width: 800px) {
+/* Móvil: sidebar fuera de pantalla por defecto */
+@media (max-width: 900px) {
     .sidebar {
         position: fixed;
         left: 0;
         top: 0;
-        transform: translateX(-100%);
-        z-index: 999;
+        transform: translateX(-105%);
+        z-index: 1100;
+        height: 100vh;
+        box-shadow: 0 6px 24px rgba(0,0,0,0.4);
     }
 
     .sidebar.open {
@@ -70,78 +80,131 @@ body {
     .sidebar-toggle {
         display: block;
     }
+
+    /* Empuja el feed cuando el sidebar esté abierto en pantallas grandes opcional */
 }
 
-/* Botón para abrir/cerrar el menú */
+/* Botón toggle */
 .sidebar-toggle {
     display: none;
     position: fixed;
-    top: 15px;
-    left: 15px;
+    top: 12px;
+    left: 12px;
     background: var(--naranja);
     border: none;
-    padding: 10px 12px;
-    border-radius: 6px;
-    font-size: 20px;
+    padding: 9px 12px;
+    border-radius: 8px;
+    font-size: 18px;
     color: var(--negro);
-    z-index: 1000;
+    z-index: 1200;
     cursor: pointer;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+/* Estética del contenido del sidebar */
+.sidebar h3 {
+    margin: 0 0 10px 0;
+    color: var(--naranja);
+    font-weight: 700;
 }
 
 /* ---------------------- */
-/* Desplegables */
+/* Desplegables animados */
 /* ---------------------- */
 
 .dropdown {
-    margin-bottom: 20px;
+    margin-bottom: 18px;
 }
 
+/* Customiza el summary para que sea un control bonito */
 .dropdown summary {
-    font-size: 18px;
-    font-weight: bold;
+    list-style: none;
+    font-size: 16px;
+    font-weight: 700;
     cursor: pointer;
-    padding: 8px 0;
+    padding: 8px 6px;
     color: var(--naranja);
-    transition: 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    border-radius: 6px;
 }
 
 .dropdown summary:hover {
+    background: rgba(255,122,0,0.06);
     color: var(--blanco);
 }
 
+/* Quitar marcador por defecto y usar uno propio */
+.dropdown summary::-webkit-details-marker { display: none; }
+
+/* Flecha personalizada */
+.dropdown summary::after {
+    content: "▸";
+    font-size: 14px;
+    opacity: 0.9;
+    transition: transform 0.18s ease;
+}
+
+details[open] > summary::after {
+    content: "▾";
+    transform: rotate(0deg);
+}
+
+/* Animación del ul que aparece dentro del details */
 .dropdown ul {
     list-style: none;
-    padding-left: 10px;
-    margin-top: 10px;
+    padding-left: 6px;
+    margin: 8px 0 0 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.28s ease, opacity 0.28s ease;
+    opacity: 0;
 }
 
+details[open] > .section-list,
+details[open] > .rank-list,
+details[open] > ul {
+    max-height: 600px; /* suficiente para mostrar la lista */
+    opacity: 1;
+}
+
+/* Elementos de lista */
 .dropdown li {
-    padding: 6px 0;
-    cursor: pointer;
-    transition: 0.2s ease;
+    padding: 6px 6px;
 }
 
-.dropdown li:hover {
+/* Hacemos que el enlace ocupe todo el espacio y alinee imagen + texto */
+.sidebar a {
+    color: inherit;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 6px;
+    border-radius: 6px;
+}
+
+.sidebar a:hover {
+    background: rgba(255,122,0,0.06);
     color: var(--naranja);
 }
 
-.dropdown a {
-    text-decoration: none;
-    color: inherit;
+/* Íconos de menú (secciones y rangos) */
+.menu-icon {
+    width: 26px;
+    height: 26px;
+    object-fit: cover;
+    border-radius: 6px;
+    flex-shrink: 0;
 }
 
-/* Iconos de secciones */
-.section-list img {
-    height: 18px;
-    margin-right: 6px;
-    vertical-align: middle;
-}
-
-/* Iconos de rangos (corregido tamaño) */
-.rank-list img {
-    height: 18px;
-    margin-right: 6px;
-    vertical-align: middle;
+/* Si alguna imagen de menú es demasiado grande: forzamos un tamaño máximo */
+.sidebar img {
+    max-width: 26px;
+    max-height: 26px;
+    object-fit: cover;
 }
 
 /* ---------------------- */
@@ -150,46 +213,59 @@ body {
 
 .feed {
     flex: 1;
-    padding: 20px;
+    padding: 22px;
+    min-height: calc(100vh - 60px);
 }
 
 .feed h2 {
     border-left: 6px solid var(--naranja);
     padding-left: 10px;
+    margin-top: 6px;
+    margin-bottom: 18px;
 }
 
 /* Posts */
 .post {
     background: var(--blanco);
-    padding: 15px;
-    margin-bottom: 15px;
+    padding: 16px;
+    margin-bottom: 16px;
     border-left: 4px solid var(--naranja);
-    border-radius: 4px;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.04);
 }
 
 .post h3 {
     margin: 0 0 8px 0;
 }
 
+/* Aseguramos que las imágenes del contenido no se salgan */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
 /* ---------------------- */
-/* Páginas internas */
+/* Páginas internas (ventana centrada) */
 /* ---------------------- */
 
 .internal-window {
     width: 400px;
+    max-width: calc(100% - 40px);
     background: var(--blanco);
     padding: 30px;
     margin: 80px auto;
     border-radius: 12px;
     border: 3px solid var(--naranja);
     text-align: center;
-    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    box-shadow: 0 0 20px rgba(0,0,0,0.12);
 }
 
 .internal-title {
     font-size: 28px;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
     color: var(--negro);
+    font-weight: 700;
 }
 
 .internal-description {
@@ -205,12 +281,14 @@ body {
     color: var(--negro);
     padding: 10px 15px;
     border-radius: 8px;
-    font-weight: bold;
+    font-weight: 700;
     text-decoration: none;
-    transition: 0.2s ease;
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
 }
 
 .back-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.12);
     background: var(--negro);
     color: var(--naranja);
 }
