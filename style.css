@@ -1,3 +1,5 @@
+/* style.css */
+
 /* --------------------------------------------------
    TIPOGRAFÍA Y ESTILO GLOBAL
 -------------------------------------------------- */
@@ -16,10 +18,16 @@ body {
 .topbar {
     display: flex;
     align-items: center;
+    justify-content: space-between; /* Nuevo */
     background-color: #111;
     padding: 10px 20px;
     height: 60px;
     border-bottom: 2px solid #333;
+}
+
+.topbar-left {
+    display: flex;
+    align-items: center;
 }
 
 .topbar .logo img {
@@ -36,29 +44,19 @@ body {
 }
 
 /* --------------------------------------------------
-   LAYOUT GENERAL
--------------------------------------------------- */
-.layout {
-    display: flex;
-}
-
-/* --------------------------------------------------
-   BOTÓN MENÚ MÓVIL
+   BOTÓN MENÚ (PC + MÓVIL)
 -------------------------------------------------- */
 .menu-btn {
-    position: fixed;
-    top: 12px;
-    right: 15px;
     font-size: 32px;
     background: none;
     border: none;
     cursor: pointer;
-    z-index: 2000;
     color: white;
-    display: none; /* Solo móvil */
+    z-index: 3000;
 }
 
-@media (max-width: 900px) {
+/* SIEMPRE visible */
+@media (min-width: 0px) {
     .menu-btn {
         display: block;
     }
@@ -70,7 +68,7 @@ body {
 .sidebar {
     position: fixed;
     top: 0;
-    right: -300px; /* Oculta fuera */
+    right: -300px; /* Oculta fuera de pantalla */
     width: 260px;
     height: 100vh;
     background-color: #111;
@@ -78,7 +76,7 @@ body {
     transition: right 0.3s ease-in-out;
     overflow-y: auto;
     border-left: 2px solid #333;
-    z-index: 1500;
+    z-index: 2500;
 }
 
 .sidebar.open {

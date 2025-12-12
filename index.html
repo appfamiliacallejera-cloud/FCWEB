@@ -8,15 +8,19 @@
 </head>
 <body>
 
-  <!-- BOTÓN MENÚ (solo móvil) -->
-<button class="menu-btn" id="menuBtn">k</button>
+<!-- BOTÓN MENÚ (PC y Móvil) -->
+<button class="menu-btn" id="menuBtn">☰</button>
 
 <!-- Barra superior -->
 <header class="topbar">
     <div class="logo">
         <img src="images/WhatsApp Image 2025-11-27 at 18.49.12.jpeg" alt="Logo FC">
     </div>
+
     <div class="title">Familia Callejera</div>
+
+    <!-- Botón menú en PC dentro del header -->
+    <button class="menu-btn desktop-menu" id="menuBtnDesktop">☰</button>
 </header>
 
 <div class="layout">
@@ -38,8 +42,8 @@
         <!-- SECCIONES -->
         <details class="dropdown">
             <summary>🏴 Secciones</summary>
-
             <ul class="section-list">
+
                 <li>
                     <a href="pages/secciones/gato.html">
                         <img class="menu-icon" src="images/WhatsApp Image 2025-09-02 at 21.13.15.jpeg" alt="Gato">
@@ -81,14 +85,15 @@
                         <span>Cachimba</span>
                     </a>
                 </li>
+
             </ul>
         </details>
 
         <!-- RANGOS -->
         <details class="dropdown">
             <summary>🎖 Rangos</summary>
-
             <ul class="rank-list">
+
                 <li>
                     <a href="pages/rangos/omega.html">
                         <img class="menu-icon" src="images/WhatsApp Image 2025-12-10 at 15.26.11.jpeg" alt="Omega">
@@ -144,6 +149,7 @@
                         <span>Aprendiz</span>
                     </a>
                 </li>
+
             </ul>
         </details>
 
@@ -158,55 +164,23 @@
     </aside>
 </div>
 
-<!-- JS PARA ABRIR/CERRAR -->
-<script>
-    const sidebar = document.getElementById("sidebar");
-    const menuBtn = document.getElementById("menuBtn");
-    const closeBtn = document.getElementById("closeBtn");
+<!-- FEED CENTRAL -->
+<main class="feed">
+    <h2>Familia Callejera</h2>
 
-    menuBtn.addEventListener("click", () => {
-        sidebar.classList.add("open");
-    });
-
-    closeBtn.addEventListener("click", () => {
-        sidebar.classList.remove("open");
-    });
-</script>
-
-
-        <!-- FEED CENTRAL -->
-        <main class="feed">
-            <h2>Familia Callejera</h2>
-
-            <div class="post">
-                <h3>Únete al Club!</h3>
-                <p>Inicia Sesión como usuario o descarga la App para adentrarte en la aventura.</p>
-            </div>
-
-            <div class="post">
-                <h3>Descubre todo lo que hacemos</h3>
-                <p>Quedadas, Rutas, Experiencias y los Retos más locos en el Club Familia Callejera.</p>
-            </div>
-        </main>
-
+    <div class="post">
+        <h3>Únete al Club!</h3>
+        <p>Inicia Sesión como usuario o descarga la App para adentrarte en la aventura.</p>
     </div>
 
-    <!-- SCRIPT mínimo para toggle sidebar (añádelo al final) -->
-    <script>
-        (function(){
-            const toggle = document.querySelector('.sidebar-toggle');
-            const sidebar = document.getElementById('sidebar');
+    <div class="post">
+        <h3>Descubre todo lo que hacemos</h3>
+        <p>Quedadas, Rutas, Experiencias y los Retos más locos en el Club Familia Callejera.</p>
+    </div>
+</main>
 
-            toggle.addEventListener('click', () => {
-                sidebar.classList.toggle('open');
-            });
-
-            // Cerrar al hacer click en un enlace (móvil)
-            document.querySelectorAll('.sidebar a').forEach(a=>{
-                a.addEventListener('click', ()=> sidebar.classList.remove('open'));
-            });
-        })();
-    </script>
+<!-- SCRIPTS -->
+<script src="scripts.js"></script>
 
 </body>
 </html>
