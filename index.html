@@ -14,17 +14,18 @@
 
 <!-- Barra superior -->
 <header class="topbar">
-    <div class="logo">
-        <img src="images/WhatsApp Image 2025-11-27 at 18.49.12.jpeg" alt="Logo FC">
-    </div>
-    <div class="title">Familia Callejera</div>
+  <div class="logo">
+    <img src="images/WhatsApp Image 2025-11-27 at 18.49.12.jpeg" alt="Logo FC">
+  </div>
+  <div class="title">Familia Callejera</div>
 
-    <!-- Botón MENÚ PC -->
-    <button class="menu-btn desktop" id="menuBtnDesktop">MENÚ ☰ </button>
+  <!-- Botón MENÚ PC: icono + texto -->
+  <button class="menu-btn desktop" id="menuBtnDesktop">MENÚ ☰</button>
 
-    <!-- Botón MENÚ móvil -->
-    <button class="menu-btn mobile" id="menuBtnMobile">☰</button>
+  <!-- Botón MENÚ móvil: solo icono -->
+  <button class="menu-btn mobile" id="menuBtnMobile">☰</button>
 </header>
+
 
 
 </header>
@@ -168,20 +169,7 @@
     </aside>
 </div>
 
-<!-- JS PARA ABRIR/CERRAR -->
-<script>
-    const sidebar = document.getElementById("sidebar");
-    const menuBtn = document.getElementById("menuBtn");
-    const closeBtn = document.getElementById("closeBtn");
 
-    menuBtn.addEventListener("click", () => {
-        sidebar.classList.add("open");
-    });
-
-    closeBtn.addEventListener("click", () => {
-        sidebar.classList.remove("open");
-    });
-</script>
 
 
         <!-- FEED CENTRAL -->
@@ -201,22 +189,8 @@
 
     </div>
 
-    <!-- SCRIPT mínimo para toggle sidebar (añádelo al final) -->
-    <script>
-        (function(){
-            const toggle = document.querySelector('.sidebar-toggle');
-            const sidebar = document.getElementById('sidebar');
+<script src="scripts.js"></script>
 
-            toggle.addEventListener('click', () => {
-                sidebar.classList.toggle('open');
-            });
-
-            // Cerrar al hacer click en un enlace (móvil)
-            document.querySelectorAll('.sidebar a').forEach(a=>{
-                a.addEventListener('click', ()=> sidebar.classList.remove('open'));
-            });
-        })();
-    </script>
 
 </body>
 </html>
